@@ -1,0 +1,4 @@
+repository "Training Unity 2D SH/Training Unity 2D SH@11270600213828@cloud"
+  path "/"
+    br "/main"
+    co "/main"
