@@ -259,7 +259,7 @@
             "id": "624a272b-8d86-45f2-8079-15ef0aee0803",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Teleport",
                     "type": "Button",
                     "id": "5321ec7b-3612-4faf-a107-ae5e1faec98f",
                     "expectedControlType": "",
@@ -272,11 +272,22 @@
                 {
                     "name": "",
                     "id": "e3d20149-670f-49af-b8c9-4fe188745d77",
-                    "path": "",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Teleport",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91f3a3ee-b026-48bc-bdb4-01d7053f9c8a",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

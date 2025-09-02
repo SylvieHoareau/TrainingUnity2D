@@ -1,4 +1,5 @@
 using UnityEngine;
+// using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Teleportation : MonoBehaviour
@@ -7,41 +8,44 @@ public class Teleportation : MonoBehaviour
 
     public Transform teleportStart;
     public Transform teleportTarget;
-    public Vector3 teleportTargetPos; // muzzlePos
 
     [SerializeField] private bool isTeleported = false;
 
     [SerializeField] private Button button;
 
+    // Pour contrôler avec la manette
+    // private PlayerInput playerInput;
+    // private InputAction teleportAction;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        button.onClick.AddListener(Teleporter);
+        // playerInput = GetComponent<PlayerInput>();
+        // teleportAction = playerInput.actions["Teleport"];
+
+        // teleportAction.performed += ctx => Teleporter();
+
+        if (button != null)
+        {
+            button.onClick.AddListener(Teleporter);
+        }
     }
     public void Teleporter()
     {
-        // teleportStart = GameObject.FindGameObjectWithTag("TeleportStart").transform;
-        // teleportTarget = GameObject.FindGameObjectWithTag("TeleportTarget").transform;
-        // player.position = teleportTarget.position;
-
-
-        if (isTeleported)
+        if (isTeleported) // Joueur au start -> téléporter au target
         {
-            teleportTargetPos = teleportTarget.position;
-            Debug.Log("isTeleported false: " + isTeleported);
+            player.position = teleportTarget.position;
+            Debug.Log("Téléporté vers Target");
         }
-        else
+        else // Joueur au target -> téléporter au start
         {
-            teleportTargetPos = teleportStart.position;
-            Debug.Log("isTeleported true: " + isTeleported);
+            // teleportTargetPos = teleportStart.position;
+            player.position = teleportStart.position;
+            Debug.Log("Téléporté vers Start");
         }
 
-        // Toggle
+        // Inverser l'état
         isTeleported = !isTeleported;
-
-        Debug.Log("Player teleported to: " + teleportTargetPos);
-        player.position = teleportTargetPos;
-
     }
 }
