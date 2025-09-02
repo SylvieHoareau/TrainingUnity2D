@@ -86,25 +86,6 @@
                     "interactions": "",
                     "initialStateCheck": false
                 }
-                ,
-                {
-                    "name": "Damage",
-                    "type": "Button",
-                    "id": "d9b8f6e1-1234-4cde-9abc-000000000001",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Heal",
-                    "type": "Button",
-                    "id": "d9b8f6e1-1234-4cde-9abc-000000000002",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
             ],
             "bindings": [
                 {
@@ -401,28 +382,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a1d9f6e1-9a12-4cde-9abc-00000000d010",
-                    "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Damage",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a1d9f6e1-9a12-4cde-9abc-00000000d011",
-                    "path": "<Keyboard>/v",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

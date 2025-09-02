@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
 
         if (playerRb == null) Debug.LogWarning("PlayerMove: pas de Rigidbody2D trouvé.");
         if (groundCheck == null) Debug.LogWarning("PlayerMove: groundCheck non assigné.");
-        Debug.Log($"PlayerMove Start: PlayerInput={(playerInput!=null)}");
+        Debug.Log($"PlayerMove Start: PlayerInput={playerInput!=null}");
 
         if (playerInput != null) Debug.Log($"PlayerInput component existe dans GameObject '{playerInput.gameObject.name}' and enverra des messages à ce GameObject.");
 

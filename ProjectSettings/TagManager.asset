@@ -8,6 +8,7 @@ TagManager:
   - TeleportTarget
   - Ground
   - TeleportStart
+  - Enemy
   layers:
   - Default
   - TransparentFX
