@@ -31,7 +31,11 @@ public class RandomListText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Pour afficher les textes à intervalles réguliers
+        if (intervalSeconds > 0f && Time.time % intervalSeconds < Time.deltaTime)
+        {
+            ShowRandom();
+        }
     }
 
     private void ShowRandom()

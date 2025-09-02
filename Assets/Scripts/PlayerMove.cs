@@ -13,24 +13,30 @@ public class PlayerMove : MonoBehaviour
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
-    private PlayerInput playerInput;
+    private PlayerControls playerControls;
     private float horizontal;
     private float vertical;
+    private Vector3 lastPosition;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerInput = GetComponent<PlayerInput>();
+        playerControls = GetComponent<PlayerControls>();
 
         if (playerRb == null) Debug.LogWarning("PlayerMove: pas de Rigidbody2D trouvé.");
         if (groundCheck == null) Debug.LogWarning("PlayerMove: groundCheck non assigné.");
-        Debug.Log($"PlayerMove Start: PlayerInput={(playerInput!=null)}");
+        Debug.Log($"PlayerMove Start: PlayerInput={(playerControls!=null)}");
 
-        if (playerInput != null && playerInput.actions != null)
+        if (playerControls != null) Debug.Log($"PlayerInput component existe dans GameObject '{playerControls.gameObject.name}' and enverra des messages à ce GameObject.");
+
+        // mémorise la position initiale pour détecter external overrides
+        lastPosition = transform.position;
+
+        if (playerControls != null && playerControls.actions != null)
         {
             Debug.Log("PlayerMove: actions available:");
-            foreach (var a in playerInput.actions)
+            foreach (var a in playerControls.actions)
             {
                 Debug.Log($" - {a.name}");
             }
@@ -61,9 +67,21 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         if (playerRb == null) return;
+        // Diagnostic: print input and rigidbody state so user can paste console output
+        Debug.Log($"PlayerMove FixedUpdate: horizontal={horizontal:F2} rb.bodyType={playerRb.bodyType} constraints={playerRb.constraints} vel=({playerRb.linearVelocity.x:F2},{playerRb.linearVelocity.y:F2}) pos=({transform.position.x:F2},{transform.position.y:F2})");
+
+        // Apply horizontal movement
         playerRb.linearVelocity = new Vector2(horizontal * speed, playerRb.linearVelocity.y);
+
+        // Detect if something else moved the transform since last frame
+        if (transform.position != lastPosition)
+        {
+            Debug.Log($"PlayerMove: transform.position changed externally from ({lastPosition.x:F2},{lastPosition.y:F2}) to ({transform.position.x:F2},{transform.position.y:F2})");
+        }
+        lastPosition = transform.position;
     }
 
+    // Permet de vérifier si le joueur est au sol
     bool IsGrounded()
     {
         if (groundCheck == null) return false;
