@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 828692399}
   - component: {fileID: 828692398}
   - component: {fileID: 828692397}
+  - component: {fileID: 828692400}
   m_Layer: 5
   m_Name: TeleportationButton
   m_TagString: Untagged
@@ -783,7 +784,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1557793180}
+      - m_Target: {fileID: 828692400}
         m_TargetAssemblyTypeName: Teleportation, Assembly-CSharp
         m_MethodName: Teleporter
         m_Mode: 1
@@ -833,6 +834,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828692395}
   m_CullTransparentMesh: 1
+--- !u!114 &828692400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828692395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8451c495f264d9b4892a35825bce7d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportStart: {fileID: 2085693337}
+  teleportTarget: {fileID: 281138769}
+  teleportTargetPos: {x: 0, y: 0, z: 0}
+  button: {fileID: 828692397}
 --- !u!1 &1061713897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,7 +2422,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1557793181}
-  - component: {fileID: 1557793180}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2413,20 +2429,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1557793180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557793179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8451c495f264d9b4892a35825bce7d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportTarget: {fileID: 281138769}
-  teleportTargetPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1557793181
 Transform:
   m_ObjectHideFlags: 0
@@ -2777,6 +2779,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2085693336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085693337}
+  m_Layer: 0
+  m_Name: TeleportStart
+  m_TagString: TeleportStart
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085693337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085693336}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.47, y: -2.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &851227139506634139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2846,6 +2879,7 @@ SceneRoots:
   - {fileID: 851227139506634139}
   - {fileID: 1488172497}
   - {fileID: 281138769}
+  - {fileID: 2085693337}
   - {fileID: 1882651722}
   - {fileID: 1717958856}
   - {fileID: 1557793181}

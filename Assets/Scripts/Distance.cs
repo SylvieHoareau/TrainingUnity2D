@@ -18,10 +18,10 @@ public class Distance : MonoBehaviour
             distanceText = GetComponent<TextMeshProUGUI>() ?? GetComponentInChildren<TextMeshProUGUI>();
         }
 
-        if (distanceText == null)
-        {
-            Debug.LogWarning("Distance: TextMeshProUGUI not assigned or found. Assign it in the Inspector.");
-        }
+        // if (distanceText == null)
+        // {
+        //     Debug.LogWarning("Distance: TextMeshProUGUI not assigned or found. Assign it in the Inspector.");
+        // }
 
         if (player == null) Debug.LogWarning("Distance: 'player' GameObject not assigned.");
         if (enemy == null) Debug.LogWarning("Distance: 'enemy' GameObject not assigned.");

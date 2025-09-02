@@ -17,7 +17,7 @@ public class CoroutineWaitText : MonoBehaviour
 
         if (coroutineText == null)
         {
-            Debug.LogError("CoroutineWaitText: no TextMeshProUGUI assigned or found on the GameObject. Coroutine aborted.");
+            // Debug.LogError("CoroutineWaitText: no TextMeshProUGUI assigned or found on the GameObject. Coroutine aborted.");
             return;
         }
 
@@ -28,12 +28,12 @@ public class CoroutineWaitText : MonoBehaviour
     {
         // Guard: coroutineText should be set by Start()
         coroutineText.text = "Loading...";
-        Debug.Log("Coroutine started, waiting for 2 seconds...");
+        // Debug.Log("Coroutine started, waiting for 2 seconds...");
 
         yield return new WaitForSeconds(2f);
 
         coroutineText.text = "Ready! From Coroutine.";
-        Debug.Log("Coroutine finished, text updated.");
+        // Debug.Log("Coroutine finished, text updated.");
     }
 
     // Update is called once per frame

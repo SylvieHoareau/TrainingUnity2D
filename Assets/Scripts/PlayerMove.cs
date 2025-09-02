@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
-    private PlayerControls playerControls;
+    private PlayerInput playerInput;
     private float horizontal;
     private float vertical;
     private Vector3 lastPosition;
@@ -22,21 +22,21 @@ public class PlayerMove : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerControls = GetComponent<PlayerControls>();
+        playerInput = GetComponent<PlayerInput>();
 
         if (playerRb == null) Debug.LogWarning("PlayerMove: pas de Rigidbody2D trouvé.");
         if (groundCheck == null) Debug.LogWarning("PlayerMove: groundCheck non assigné.");
-        Debug.Log($"PlayerMove Start: PlayerInput={(playerControls!=null)}");
+        Debug.Log($"PlayerMove Start: PlayerInput={(playerInput!=null)}");
 
-        if (playerControls != null) Debug.Log($"PlayerInput component existe dans GameObject '{playerControls.gameObject.name}' and enverra des messages à ce GameObject.");
+        if (playerInput != null) Debug.Log($"PlayerInput component existe dans GameObject '{playerInput.gameObject.name}' and enverra des messages à ce GameObject.");
 
         // mémorise la position initiale pour détecter external overrides
         lastPosition = transform.position;
 
-        if (playerControls != null && playerControls.actions != null)
+        if (playerInput != null && playerInput.actions != null)
         {
             Debug.Log("PlayerMove: actions available:");
-            foreach (var a in playerControls.actions)
+            foreach (var a in playerInput.actions)
             {
                 Debug.Log($" - {a.name}");
             }

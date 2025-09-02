@@ -406,7 +406,7 @@
                 },
                 {
                     "name": "",
-                    "id": "damage-binding-1",
+                    "id": "a1d9f6e1-9a12-4cde-9abc-00000000d010",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
@@ -417,7 +417,7 @@
                 },
                 {
                     "name": "",
-                    "id": "heal-binding-1",
+                    "id": "a1d9f6e1-9a12-4cde-9abc-00000000d011",
                     "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
