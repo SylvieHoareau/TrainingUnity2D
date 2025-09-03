@@ -7,7 +7,7 @@ public class Replay : MonoBehaviour
 {
     private Button replayButton;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         replayButton = GetComponent<Button>();

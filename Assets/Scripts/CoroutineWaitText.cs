@@ -6,7 +6,7 @@ public class CoroutineWaitText : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coroutineText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         // If not assigned in Inspector, try to find one on the GameObject or its children

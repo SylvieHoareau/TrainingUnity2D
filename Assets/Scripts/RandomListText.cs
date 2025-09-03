@@ -16,7 +16,7 @@ public class RandomListText : MonoBehaviour
             textUI = GetComponent<TextMeshProUGUI>() ?? GetComponentInChildren<TextMeshProUGUI>();
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         if (texts == null || texts.Count == 0)

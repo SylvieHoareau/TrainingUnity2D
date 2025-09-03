@@ -7,7 +7,7 @@ public class Spawn : MonoBehaviour
     public GameObject child;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         // Instantier l'enfant sous le parent

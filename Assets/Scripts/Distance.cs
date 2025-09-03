@@ -9,7 +9,7 @@ public class Distance : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI distanceText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         // Trouver automatiquement TMP s'il n'a pas été assigné dans l'Inspector

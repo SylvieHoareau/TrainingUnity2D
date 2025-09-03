@@ -17,6 +17,7 @@ public class Teleportation : MonoBehaviour
     // private PlayerInput playerInput;
     // private InputAction teleportAction;
 
+    // Au démarrage du jeu
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;

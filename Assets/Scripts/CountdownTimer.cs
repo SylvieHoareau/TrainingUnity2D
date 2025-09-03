@@ -12,7 +12,7 @@ public class CountdownTimer : MonoBehaviour
 
     private bool isRunning = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         timerText = GetComponent<TextMeshProUGUI>();

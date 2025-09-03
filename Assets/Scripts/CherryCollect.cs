@@ -6,7 +6,7 @@ public class CherryCollect : MonoBehaviour
     public TextMeshProUGUI cherryText; // Le textUI pour afficher le nombre de cerises collectées
 
     private int cherryCount = 0;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         // Le nombre de cerises collectées est à Zéro au départ
