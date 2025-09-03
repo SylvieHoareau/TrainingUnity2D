@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Door : MonoBehaviour
 {
@@ -15,21 +16,55 @@ public class Door : MonoBehaviour
         doorAnimator = door.GetComponent<Animator>();
     }
 
+    public bool IsDoorOpen()
+    {
+        return doorAnimator.GetBool("isOpen");
+    }
+
+    // Au démarrage du jeu
+    void Start()
+    {
+        // Initialement, la porte est fermée
+        // CloseDoor();
+
+        // Démarrer la coroutine pour temporiser l'ouverture et la fermeture de la porte
+        StartCoroutine(TimerDoor());
+    }
+
+     // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    // Pour ouvrir la porte
     public void OpenDoor()
     {
         doorAnimator.SetBool("isOpen", true);
         doorCollider.bodyType = RigidbodyType2D.Kinematic;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // Pour fermer la porte 
+    public void CloseDoor()
     {
-        
+        doorAnimator.SetBool("isOpen", false);
+        doorCollider.bodyType = RigidbodyType2D.Kinematic;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    // Coroutine pour temporiser la fermeture de la porte
+    IEnumerator TimerDoor() {
+
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            doorAnimator.SetBool("isOpen", true);
+
+            yield return new WaitForSeconds(1);
+            doorAnimator.SetBool("isOpen", false);
+        }
         
+        // doorCollider.bodyType = RigidbodyType2D.Static;
     }
+
+   
 }

@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Door
   - Cherry
+  - Frog
+  - DeathZone
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Traversable
   - 
   - 
   - 
