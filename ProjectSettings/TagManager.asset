@@ -10,6 +10,7 @@ TagManager:
   - TeleportStart
   - Enemy
   - Door
+  - Cherry
   layers:
   - Default
   - TransparentFX
