@@ -46,7 +46,7 @@ public class Distance : MonoBehaviour
 
         if (distanceText != null)
         {
-            distanceText.text = "Distance: " + distance.ToString("F2"); // F2 est un format avec 2 décimales
+            distanceText.text = "Distance Player-Enemy: " + distance.ToString("F2"); // F2 est un format avec 2 décimales
         }
         else
         {
