@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     public bool death = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Au démarrage du jeu
     void Start()
     {
         currentHealth = maxHealth;
@@ -140,5 +140,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.value = currentHealth;
         death = false;
+        Debug.Log("Player is healed");
+    }
+
+    public void FullKill()
+    {
+        currentHealth = minHealth;
+        healthBar.value = currentHealth;
+        death = true;
+        Debug.Log("Player is dead");
     }
 }
