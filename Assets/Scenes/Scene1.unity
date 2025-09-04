@@ -2529,7 +2529,6 @@ GameObject:
   - component: {fileID: 948606553}
   - component: {fileID: 948606556}
   - component: {fileID: 948606557}
-  - component: {fileID: 948606558}
   - component: {fileID: 948606559}
   m_Layer: 0
   m_Name: Frog
@@ -2704,18 +2703,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.30959058, y: 0.2391811}
   m_EdgeRadius: 0
---- !u!114 &948606558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948606552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5df6d3d10d96fe4489cca51b24ff7eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &948606559
 MonoBehaviour:
   m_ObjectHideFlags: 0
