@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FreezePosition : MonoBehaviour
@@ -17,7 +18,7 @@ public class FreezePosition : MonoBehaviour
     }
 
     // Update is called once per frame
-    private System.Collections.IEnumerator FreezeAfterSeconds(float seconds)
+    private IEnumerator FreezeAfterSeconds(float seconds)
     {
         // Attendre le délai spécifié
         yield return new WaitForSeconds(seconds);
@@ -28,5 +29,19 @@ public class FreezePosition : MonoBehaviour
 
         // Désactiver la gravité
         rb.gravityScale = 0f;
+    }
+
+    private void Unfreeze()
+    {
+        if (rb == null) return;
+        rb.constraints = RigidbodyConstraints2D.None; // Supprime toutes les contraintes
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 1f;
+        // ou rb.bodyType = RigidbodyType2D.Dynamic
+    }
+    private IEnumerator StopFreeze()
+    {
+        yield return new WaitForSeconds(1f);
+        Unfreeze();
     }
 }
