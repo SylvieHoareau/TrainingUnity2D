@@ -9,7 +9,7 @@ public class ResourcesBehaviour : MonoBehaviour
         GameObject item = Resources.Load<GameObject>("Cherry");
         if (item != null)
         {
-            Instantiate(item, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(item, new Vector3(0f, 0f, 0f), Quaternion.identity);
         }
         else
         {
